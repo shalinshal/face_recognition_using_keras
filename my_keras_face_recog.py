@@ -40,7 +40,7 @@ classifier.add(Flatten())
 #%%
 # Full Connection
 classifier.add(Dense(units = 128, activation = 'relu' ))
-classifier.add(Dense(units = 3, activation = 'softmax' ))
+classifier.add(Dense(units = 4, activation = 'softmax' ))
 
 #%%
 # Compiling
@@ -69,10 +69,10 @@ test_set = test_datagen.flow_from_directory('test_data',
                                             class_mode='categorical')
 
 classifier.fit_generator(training_set,
-                    steps_per_epoch=65,
-                    epochs=20,
+                    steps_per_epoch=90,
+                    epochs=10,
                     validation_data=test_set,
-                    validation_steps=3)
+                    validation_steps=4)
 
 #%%
 # save classifier
